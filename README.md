@@ -7,7 +7,7 @@ This Docker container runs a Litecoin node, allowing you to participate in the L
 To build the container, run the following command in the directory containing the Dockerfile:
 
 ```
-docker build -t litecoin-node .
+docker build -t litecoin-node-test:v6 .
 ```
 
 ## Running the Container
@@ -16,7 +16,7 @@ To run the container, use the following command:
 
 
 ```
-docker run -d -p 9333:9333 -p 9332:9332 -p 19332:19332 -p 19335:19335 -v litecoin-data:/litecoin -e TESTNET=1 --name litecoin-node litecoin-node
+docker run -d -p 19332:19332 -p 19335:19335 --restart always -v litecoin-data:/litecoin4 --name litecoin-node-test8 litecoin-node-test:v5
 ```
 
 This command does the following:
@@ -35,4 +35,3 @@ To stop the container, run:
 ```
 docker stop litecoin-node
 ```
-
